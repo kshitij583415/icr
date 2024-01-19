@@ -138,6 +138,12 @@ const YourComponent = () => {
         <br />
         ವಿಶೇಷ ಸೂಚನೆ:
         <br />
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        
         <br />
         <br />
         <br />

@@ -14,7 +14,7 @@ input[type="date"] {
     border: none;
     padding: 3px;
     margin-bottom: 10px;
-    size: 80px;
+    size: 30px;
 }
 
 .past3-li{
@@ -33,10 +33,10 @@ input[type="date"] {
 } */
 
 .past3book {
-    width: 98%;
+    width: 90%;
     margin: 0 auto;
     padding: 7px;
-    border: 300px double #000;
+    border: 100px double #000;
 }
 
 

@@ -55,7 +55,7 @@ function App() {
       const responseData = await response.json();
       console.log("Registration successful:", responseData);
       alert("Registered successfully");
-      navigate("/");
+      navigate("/login");
     } catch (error) {
       // Handle network or unexpected error
       console.error("Registration failed:", error.message);

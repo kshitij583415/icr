@@ -175,7 +175,7 @@ const IntakeForm = () => {
                 type="text"
                 id="t1"
                 name="t1"
-                style={{ marginRight: "102px" }}
+                style={{ marginRight: "2px" }}
                 value={formData.t1}
                 onChange={handleInputChange}
               />
@@ -187,7 +187,7 @@ const IntakeForm = () => {
                 type="text"
                 id="t2"
                 name="t2"
-                style={{ marginRight: "102px" }}
+                style={{ marginRight: "2px" }}
                 value={formData.t2}
                 onChange={handleInputChange}
               />
@@ -199,11 +199,11 @@ const IntakeForm = () => {
                 type="text"
                 id="t3"
                 name="t3"
-                style={{ marginRight: "102px" }}
+                style={{ marginRight: "2px" }}
                 value={formData.t3}
                 onChange={handleInputChange}
               />
-
+{/* 
               <label className="past1l1" style={{ display: "inline-block" }}>
                 Weight:
               </label>
@@ -211,10 +211,10 @@ const IntakeForm = () => {
                 type="text"
                 id="t4"
                 name="t4"
-                style={{ marginRight: "102px" }}
+                style={{ marginRight: "2px" }}
                 value={formData.t4}
-                onChange={handleInputChange}
-              />
+                onChange={handleInputChange} 
+              /> */}
             </div>
 
             <br />
@@ -224,7 +224,6 @@ const IntakeForm = () => {
           <label class="past1l1">
             <b>Which of the following symptoms are present during admission:</b>
           </label>
-          <br />
           <div id="past1-div-body" align="left">
             <div class="past1div">
               <ul className="past1-ul">
@@ -629,10 +628,6 @@ const IntakeForm = () => {
           </div>
         </div>
 
-        <br />
-        <br />
-        <br />
-
         <label class="past1l1">
           <b>Investigation: </b>
         </label>
@@ -645,9 +640,6 @@ const IntakeForm = () => {
           value={formData.investigation}
           onChange={handleInputChange}
         />
-        <br />
-        <br />
-        <br />
 
         <label class="past1l1">Certificate issued(details) :</label>
         <input
@@ -658,9 +650,6 @@ const IntakeForm = () => {
           value={formData.certificateDetails}
           onChange={handleInputChange}
         />
-        <br />
-        <br />
-        <br />
 
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           {/* <div style={{ textAlign: "center" }}>

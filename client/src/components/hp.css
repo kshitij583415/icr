@@ -1,0 +1,65 @@
+.hm_back {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    background-image: url("./background.jpg"); /* Adjust the path accordingly */
+    background-size: cover;
+    background-position: center;
+    font-family: "Arial", sans-serif;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    color: white; /* Set text color to white for better contrast */
+  }
+  .hm_casesheet {
+    display: inline-block;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-top: 70px;
+  }
+  .hm_casesheet p {
+    padding: 8px 2px;
+    margin: 5px 7px;
+    font-weight: bold;
+  }
+  .hm_cent {
+    text-align: center;
+  }
+  .hm_logo {
+    margin-top: 100px;
+  }
+  .hm_logo h1 {
+    text-decoration: underline;
+    font-size: bold;
+  }
+  .hm_logo p {
+    font-size: larger;
+    margin-bottom: 50px;
+  }
+  .hm_line {
+      border: none;
+      border-top: 2px solid white; /* Set the thickness and color of the line */
+      margin: 10px 0; /* Adjust the margin as needed */
+      width: 100%; /* Set the width of the line, you can adjust this percentage */
+  }
+  .hm_btn {
+      padding: 5px 10px;
+      transition: padding 0.3s; /* Add a smooth transition effect */
+      border: 2px solid white;
+      border-radius: 4px ;
+  }
+  
+  .hm_btn:hover {
+      padding: 8px 12px; /* Adjust the padding on hover as needed */
+  }
+  .btm_part
+  {
+      margin: 50px 50px;
+      font-size: larger;
+  }
+  .inside_p
+  {
+      text-align: center;
+  }
+  

@@ -353,6 +353,10 @@ const DeclarationForm = () => {
               </ol>
             </li>
           </ol>
+          <br></br>
+          <br></br>
+
+          <br></br>
           {/* Rest of your HTML content */}
           <center>
             <div className="footer">

@@ -9,16 +9,16 @@
 }
 
 /* Style for each navigation item */
-.nav-item {
+/* .nav-item {
   margin-right: 20px; /* Adjust the spacing between items */
   /* font-size: large; */
-}
+} */
 
 /* Style for the Dropdown Toggle */
 .dropdown-toggle {
   background-color: #007bff; /* Example color */
   color: #fff;
-  padding: 10px 15px;
+  /* padding: 10px 15px; */
   border: none;
   cursor: pointer;
 }

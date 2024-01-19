@@ -23,10 +23,9 @@ import Medical2 from './components/medical/Page2/PatientInformation.jsx'
 import Login from './components/Login.jsx'
 import Signup from './components/Signup.jsx'
 import Result from './components/Result.js'
-
-
-
-
+// import PrintAllPages from './components/basic/PrintAllPages.jsx';
+import PreviewPages from './components/basic/PreviewPages.jsx';
+import Hp from './components/hp.js';
 
 
 import './App.css'
@@ -39,7 +38,8 @@ const App = () => {
 
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route exact path="/" element={<Login />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<Hp />} />
         <Route exact path="/signup" element={<Signup />} />
         <Route exact path="/result" element={<Result />} />
         <Route exact path="/basic/form1" element={<>
@@ -169,8 +169,8 @@ const App = () => {
         </>} />
         {/* <Route exact path='/medical/page3' element={<Medical3 />} />
         <Route exact path='/medical/page4' element={<Medical4 />} /> */}
-
-
+         {/* <Route exact */}
+<Route path='/preview/pages'element={<PreviewPages/>}></Route>
 
 
       </Routes>

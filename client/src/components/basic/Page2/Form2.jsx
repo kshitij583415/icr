@@ -19,11 +19,15 @@ const Form2 = () => {
     remarks: " ",
   });
 
-  useEffect(() => {
+  const loadSavedData = () => {
     const savedData = localStorage.getItem("formData");
     if (savedData) {
-      setFormData(JSON.parse(savedData));
+      setFormData(JSON.parse(savedData || '{}'));
     }
+  };
+
+  useEffect(() => {
+    loadSavedData();
   }, []);
 
   const handleInputChange = (e) => {
@@ -34,18 +38,6 @@ const Form2 = () => {
     }));
   };
 
-  const loadSavedData = () => {
-    const savedData = localStorage.getItem("formData");
-    if (savedData) {
-      setFormData(JSON.parse(savedData));
-    }
-  };
-
-  useEffect(() => {
-    loadSavedData();
-  }, []);
-
-  //Submit the data Successfully
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -61,39 +53,17 @@ const Form2 = () => {
         }
       );
 
-      // Handle response if needed
       console.log("Form data submitted:", response);
 
-      // Reset form after submission
-      // setFormData({
-      //   name: "",
-      //   email: "",
-      //   occupation: "",
-      //   age: "",
-      //   dob: "",
-      //   dateOfIntake: "",
-      //   dateOfAdmission: "",
-      //   bpl: "",
-      //   accompaniedBy: "",
-      //   yearOfDrinkingAbuse: "",
-      //   yearOfExcessiveAbuse: "",
-      //   presentPatternAbuse: "",
-      //   presenceOf: "",
-      //   useOfOtherDrugs: "",
-      //   psychiatricProblem: "",
-      //   denial: "Mild",
-      //   physicalProblems: "",
-      //   priorTreatment: "",
-      //   willingnessForTreatment: "Unwilling",
-      //   motivatingFactor: "",
-      // Reset other fields as needed
-      // });
+      // Save form data to local storage after successful submission
+      localStorage.setItem("formData", JSON.stringify(formData));
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   };
 
   const navigate = useNavigate();
+
   function page1() {
     navigate("/basic/form1");
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -103,6 +73,7 @@ const Form2 = () => {
     navigate("/basic/form3");
     window.scrollTo({ top: 0, behavior: "instant" });
   }
+  
   return (
     <form onSubmit={handleSubmit}>
       {formData && (
@@ -286,7 +257,9 @@ const Form2 = () => {
           </p>
 
           <br />
-
+          <br></br>
+          <br></br>
+          <br></br>
           <p style={{ position: "relative", left: "70%" }}>
             <b>Signature of the Counsellor</b>
             <br />
@@ -299,7 +272,15 @@ const Form2 = () => {
               accept="image/*"
             />
           </p>
-
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
           <center>
             <div className="footer">
               <div className="bi_endbtn">

@@ -109,9 +109,12 @@ const PatientInformation = () => {
 
       if (response.ok) {
         console.log("Form data submitted successfully");
-        alert("Form submitted successfully");
+        navigate("/past/page1")
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        // alert("Form submitted successfully");
         // You can add additional logic here, such as redirecting to another page
-      } else {
+      }
+      else {
         console.error("Failed to submit form data");
         // Handle error, show a message, etc.
       }
@@ -132,8 +135,9 @@ const PatientInformation = () => {
               id="innni"
               type="text"
               name="lastDrinkOrDrugsDaysAgo"
-              value={formData.lastDrinkOrDrugsDaysAgo}
+              // value={formData.lastDrinkOrDrugsDaysAgo}
               onChange={handleInputChange}
+              defaultValue={"3 days ago"}
             />
           </div>
           <br />
@@ -143,8 +147,9 @@ const PatientInformation = () => {
               id="innni"
               type="text"
               name="diagnosis"
-              value={formData.diagnosis}
+              // value={formData.diagnosis}
               onChange={handleInputChange}
+              defaultValue={"Never"}
               required
             />
           </div>
@@ -155,8 +160,9 @@ const PatientInformation = () => {
               id="innni"
               type="text"
               name="previousHistory"
-              value={formData.previousHistory}
+              // value={formData.previousHistory}
               onChange={handleInputChange}
+              defaultValue={"Never"}
               required
             />
           </div>
@@ -171,30 +177,35 @@ const PatientInformation = () => {
             <p id="hed">Alcohol</p>
             <ul id="alcoholSymptoms">
               {alcoholSymptoms.map((checked, index) => (
-                <li
-                  id="lillu"
-                  key={index}
-                  className={checked ? "checked" : ""}
-                  onClick={() => toggleCheckbox(index, "alcoholSymptoms")}
-                >
-                  {checked ? "✔" : "+"}{" "}
-                  {
-                    [
-                      "Tremors",
-                      "Insomnia",
-                      "Fits",
-                      "Aches/Pains",
-                      "Hallucination",
-                      "Delirium",
-                    ][index]
-                  }
+                <li key={index}>
+                  <input
+                    id={`checkbox-${index}`}
+                    type="checkbox"
+                    checked={index === 1 || index === 2 || checked}
+                    onChange={() => toggleCheckbox(index, "alcoholSymptoms")}
+                  />
+                  <label htmlFor={`checkbox-${index}`}>
+                    {index === 1 || index === 2 ? "✔" : checked ? "✔" : "+"}{" "}
+                    {
+                      [
+                        "Tremors",
+                        "Insomnia",
+                        "Fits",
+                        "Aches/Pains",
+                        "Hallucination",
+                        "Delirium",
+                      ][index]
+                    }
+                  </label>
                 </li>
               ))}
             </ul>
+
+
           </div>
           <div>
             <p id="hed">Drug</p>
-            <ul id="alcoholSymptoms" className="symptoms-list">
+            <ul id="drugSymptoms" className="symptoms-list">
               {drugSymptoms.map((checked, index) => (
                 <li
                   id="lillu"
@@ -202,19 +213,32 @@ const PatientInformation = () => {
                   className={checked ? "checked" : ""}
                   onClick={() => toggleCheckbox(index, "drugSymptoms")}
                 >
-                  {checked ? "✔" : "+"}{" "}
-                  {
-                    [
-                      "Tremors",
-                      "Insomnia",
-                      "Fits",
-                      "Severe pain",
-                      "Restlessness",
-                    ][index]
-                  }
+                  <input
+                    id={`checkbox-drug-${index}`}
+                    type="checkbox"
+                    checked={(index === 0 || index === drugSymptoms.length - 1) || checked}
+                    onChange={() => toggleCheckbox(index, "drugSymptoms")}
+                  />
+                  <label htmlFor={`checkbox-drug-${index}`}>
+                    {index === 0 || index === drugSymptoms.length - 1
+                      ? "✔"
+                      : checked
+                        ? "✔"
+                        : "+"}{" "}
+                    {
+                      [
+                        "Tremors",
+                        "Insomnia",
+                        "Fits",
+                        "Severe pain",
+                        "Restlessness",
+                      ][index]
+                    }
+                  </label>
                 </li>
               ))}
             </ul>
+
           </div>
         </div>
 
@@ -225,46 +249,58 @@ const PatientInformation = () => {
               id="lillu"
               key={index}
               className={checked ? "checked" : ""}
-              onClick={() => toggleCheckbox(index, "psychiatricComplications")}
+              onClick={() => toggleCheckbox(index)}
             >
-              {checked ? "✔" : "+"}{" "}
-              {
-                [
-                  "Depression",
-                  "Suicidal ideation/attempts",
-                  "Confusion",
-                  "Aggressive outbursts",
-                  "Hallucination",
-                  "Paranoia",
-                ][index]
-              }
+              <input
+                id={`checkbox-psychiatric-${index}`}
+                type="checkbox"
+                checked={checked}
+                onChange={() => toggleCheckbox(index)}
+              />
+              <label htmlFor={`checkbox-psychiatric-${index}`}>
+                {checked ? "✔" : "+"}{" "}
+                {
+                  [
+                    "Depression",
+                    "Suicidal ideation/attempts",
+                    "Confusion",
+                    "Aggressive outbursts",
+                    "Hallucination",
+                    "Paranoia",
+                  ][index]
+                }
+              </label>
             </li>
           ))}
         </ul>
 
-        <p id="hed">History of other Medical problems in the past</p>
+
         <ul id="alcoholSymptoms">
           {medicalProblems.map((checked, index) => (
-            <li
-              id="lillu"
-              key={index}
-              className={checked ? "checked" : ""}
-              onClick={() => toggleCheckbox(index, "medicalProblems")}
-            >
-              {checked ? "✔" : "+"}{" "}
-              {
-                [
-                  "Haematemesis",
-                  "Jaundice",
-                  "Abscesses",
-                  "Bleeding piles",
-                  "Skin problems",
-                  "Any other",
-                ][index]
-              }
+            <li key={index}>
+              <input
+                id={`checkbox-medical-${index}`}
+                type="checkbox"
+                checked={checked}
+                onChange={() => toggleCheckbox(index)}
+              />
+              <label htmlFor={`checkbox-medical-${index}`}>
+                {checked ? "✔" : "+"}{" "}
+                {
+                  [
+                    "Haematemesis",
+                    "Jaundice",
+                    "Abscesses",
+                    "Bleeding piles",
+                    "Skin problems",
+                    "Any other",
+                  ][index]
+                }
+              </label>
             </li>
           ))}
         </ul>
+
 
         <p id="hed">Chronic health problems</p>
         <ul id="alcoholSymptoms">
@@ -275,18 +311,26 @@ const PatientInformation = () => {
               className={checked ? "checked" : ""}
               onClick={() => toggleCheckbox(index, "chronicProblems")}
             >
-              {checked ? "✔" : "+"}{" "}
-              {
-                [
-                  "Diabetes",
-                  "Liver disorders",
-                  "Epilepsy",
-                  "Respiratory problems - Pulmonary TB/Chronic Bronchitis/Bronchial asthma",
-                  "Cardiac problems - HBP/IHD/RHD",
-                  "Infections",
-                  "Others",
-                ][index]
-              }
+              <input
+                id={`checkbox-chronic-${index}`}
+                type="checkbox"
+                checked={checked}
+                onChange={() => toggleCheckbox(index)}
+              />
+              <label htmlFor={`checkbox-chronic-${index}`}>
+                {checked ? "✔" : "+"}{" "}
+                {
+                  [
+                    "Diabetes",
+                    "Liver disorders",
+                    "Epilepsy",
+                    "Respiratory problems - Pulmonary TB/Chronic Bronchitis/Bronchial asthma",
+                    "Cardiac problems - HBP/IHD/RHD",
+                    "Infections",
+                    "Others",
+                  ][index]
+                }
+              </label>
             </li>
           ))}
         </ul>

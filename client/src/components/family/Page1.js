@@ -134,6 +134,7 @@ const Page1 = () => {
         <div className="fh_container">
           <div className="fh_form-container">
             <table className='fh_table'>
+            <br/><br/>
               <tr>
                 <th  className='fh_th' colspan="2">In case of death of parents</th>
               </tr>
@@ -162,7 +163,7 @@ const Page1 = () => {
                     onChange={(e) => setMotherDeathReason(e.target.value)}
                   />
                 </td>
-              </tr>
+              </tr><br/><br/>
               <tr>
                 <th  className='fh_th'  colspan="2">How old were you at that time?</th>
               </tr>
@@ -224,7 +225,7 @@ const Page1 = () => {
               onChange={(e) => setLanguagesKnown(e.target.value)}
             />
           </div>
-        </div>
+        </div><br/><br/><br/><br/>
         <h2 className='fh_h2'>2.Motivation level during admission:</h2>
 
         <form className='fh_form'>
@@ -252,6 +253,10 @@ const Page1 = () => {
             Absent
           </label>
         </form>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <div className="fh_endbtn">
         <div class="page-number">8</div>
         <button className="fh_next-btn" onClick={goToNextPage}>

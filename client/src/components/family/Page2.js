@@ -177,7 +177,7 @@ const Page2 = () => {
             <td className='fh_td'><input  className='fh_input' type="radio" name="other" value="absent" /></td>
           </tr>
         </tbody>
-      </table>
+      </table><br/><br/><br/><br/>
       <div className="fh_endbtn">
         <button className="fh_prev-btn" onClick={goToPrevPage}>
         &laquo;  Prev 

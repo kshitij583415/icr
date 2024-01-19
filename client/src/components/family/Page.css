@@ -8,7 +8,7 @@ body {
 }
 
 .fh_h2 {
-  margin-top: 20px;
+  /* margin-top: 20px; */
   /* color: #555; */
   color: #000000;
 }
@@ -383,7 +383,7 @@ body {
 {
     color: black;
     font-size: 35px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     list-style: upper-roman;
 }
 .fh_hidden

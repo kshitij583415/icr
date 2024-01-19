@@ -84,7 +84,7 @@ const Form3 = () => {
       }
     } catch (error) {
       console.error("Error submitting form:", error);
-      // Handle error appropriately (e.g., show error message to the user)
+      // Handle error appropriately (e.g., show error message to the user)past
     }
   };*/
   const handlePrev = () => {
@@ -95,6 +95,8 @@ const Form3 = () => {
 
   return (
     <form className="past3form">
+      <br />
+      <br />
       <div
         className="past3book"
         style={{
@@ -104,13 +106,14 @@ const Form3 = () => {
           outline: "solid 2px black",
         }}
       >
+        <br />
         <div className="past3page">
           <h1 className="past3-head" align="center" margin-bottom="20px">
             PSYCHIATRIC HISTORY
           </h1>
           <label
             className="past3label"
-            style={{ display: "inline-block", width: "45px" }}
+            style={{ display: "inline-block", width: "50px" }}
           ></label>
 
           <label className="past3label" style={{ display: "inline-block" }}>
@@ -155,7 +158,7 @@ const Form3 = () => {
           <ol className="past3-ol" start="1">
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "520px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
               History of Alcoholism/Substance Abuse:
             </li>
@@ -168,12 +171,10 @@ const Form3 = () => {
               onChange={handleInputChange}
             />
             <br />
-            <br />
-            <br />
 
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "330px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
               Physical complications:
             </li>
@@ -185,12 +186,10 @@ const Form3 = () => {
               onChange={handleInputChange}
             />
             <br />
-            <br />
-            <br />
 
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "180px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
               Past History:
             </li>
@@ -203,11 +202,9 @@ const Form3 = () => {
               onChange={handleInputChange}
             />
             <br />
-            <br />
-            <br />
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "300px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
               Psychiatric problems:
             </li>
@@ -220,12 +217,11 @@ const Form3 = () => {
               onChange={handleInputChange}
             />
             <br />
-            <br />
-            <br />
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "320px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
+             
               Withdrawal symptoms:
             </li>
             <br />
@@ -237,11 +233,9 @@ const Form3 = () => {
               onChange={handleInputChange}
             />
             <br />
-            <br />
-            <br />
             <li
               className="past3-li"
-              style={{ display: "inline-block", width: "150px" }}
+              style={{ display: "inline-block", width: "50px" }}
             >
               Treatment:
             </li>

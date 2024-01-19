@@ -40,6 +40,7 @@ function App() {
       if (!response.ok) {
         // Handle login error
         console.error("Login failed:", response.statusText);
+        alert("Incorrect Email address or password");
         return;
       }
 

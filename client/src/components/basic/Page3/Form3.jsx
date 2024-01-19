@@ -98,7 +98,12 @@ const Form3 = () => {
     <form onSubmit={handleSubmit}>
       <div className="bi_form">
         <h1>
+        <br></br>
+        <br></br>
+        
           <div id="bi_heading">ಸಮ್ಮತಿ ಪತ್ರ</div>
+          <br></br>
+          <br></br>
         </h1>
 
         <div id="bi_content">
@@ -113,6 +118,10 @@ const Form3 = () => {
             </i>
           </p>
           <br />
+          <br></br>
+          <br></br>
+          <br></br>
+
           <p>
             <i>
               ಚಿಕಿತ್ಸಾ ಅವಧಿಯಲ್ಲಿ ಸಂಘಟಕರು ಕೈಗೊಂಡ ಪ್ರತಿಯೊಂದು ಕಾರ್ಯಕ್ರಮದಲ್ಲಿ
@@ -127,6 +136,9 @@ const Form3 = () => {
         <p id="bi_signtxt">ಚಿಕಿತ್ಸಾರ್ಥಿಯ</p>
         <br />
 
+
+        <br></br>
+        <br></br>
         <div id="bi_signtxt1">
           <div id="bi_name1">
             <b>ಹೆಸರು</b>
@@ -153,7 +165,10 @@ const Form3 = () => {
           </i>
         </p>
         <br />
-
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <p id="bi_signtxt">ದಾಖಲುಪಡಿಸಿದವರ</p>
         <br />
 
@@ -177,7 +192,15 @@ const Form3 = () => {
         <p id="bi_mobileNo">
           ಮೊಬೈಲ್ ನಂ. <input type="text" name="moNo" />
         </p>
-
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <center>
           <div className="bi_footer">
             <div className="bi_endbtn">

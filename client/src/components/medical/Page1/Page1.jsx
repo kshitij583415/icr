@@ -110,6 +110,7 @@ function Page1() {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -222,8 +223,9 @@ function Page1() {
           <input
             type="number"
             name="regNo"
-            value={formData.regNo}
+            // value={formData.regNo}
             onChange={handleInputChange}
+            defaultValue={800929}
           />
         </div>
         <br />
@@ -234,8 +236,9 @@ function Page1() {
           type="text"
           className="name"
           name="name"
-          value={formData.name}
+          // value={formData.name}
           onChange={handleInputChange}
+          // defaultValue={"Ramesh"}
         />
         <label>Age : </label>
         <input
@@ -281,7 +284,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.depressants.ageOfFirstUse}
+                  // value={formData.alcoholDrugAbused.depressants.ageOfFirstUse}
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "depressants",
@@ -294,7 +298,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.depressants.yearsOfUse}
+                  // value={formData.alcoholDrugAbused.depressants.yearsOfUse}
+                  defaultValue={"2001"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "depressants",
@@ -350,9 +355,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.depressants.frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.depressants.frequencyLast30Days
+                  // }
+                  defaultValue={"7"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "depressants",
@@ -400,9 +406,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.narcoticAnalgesic.ageOfFirstUse
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.narcoticAnalgesic.ageOfFirstUse
+                  // }
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "narcoticAnalgesic",
@@ -415,9 +422,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.narcoticAnalgesic.yearsOfUse
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.narcoticAnalgesic.yearsOfUse
+                  // }
+                  defaultValue={"2001"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "narcoticAnalgesic",
@@ -477,10 +485,11 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.narcoticAnalgesic
-                      .frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.narcoticAnalgesic
+                  //     .frequencyLast30Days
+                  // }
+                  defaultValue={"4"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "narcoticAnalgesic",
@@ -526,7 +535,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.cannabis.ageOfFirstUse}
+                  // value={formData.alcoholDrugAbused.cannabis.ageOfFirstUse}
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "cannabis",
@@ -539,7 +549,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.cannabis.yearsOfUse}
+                  // value={formData.alcoholDrugAbused.cannabis.yearsOfUse}
+                  defaultValue={"2003"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "cannabis",
@@ -595,9 +606,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.cannabis.frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.cannabis.frequencyLast30Days
+                  // }
+                  defaultValue={"1"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "cannabis",
@@ -639,7 +651,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.stimulants.ageOfFirstUse}
+                  // value={formData.alcoholDrugAbused.stimulants.ageOfFirstUse}
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "stimulants",
@@ -652,7 +665,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.stimulants.yearsOfUse}
+                  // value={formData.alcoholDrugAbused.stimulants.yearsOfUse}
+                  defaultValue={"2005"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "stimulants",
@@ -708,9 +722,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.stimulants.frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.stimulants.frequencyLast30Days
+                  // }
+                  defaultValue={"10"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "stimulants",
@@ -757,7 +772,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.hallucinogens.ageOfFirstUse}
+                  // value={formData.alcoholDrugAbused.hallucinogens.ageOfFirstUse}
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "hallucinogens",
@@ -770,7 +786,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.hallucinogens.yearsOfUse}
+                  // value={formData.alcoholDrugAbused.hallucinogens.yearsOfUse}
+                  defaultValue={"2004"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "hallucinogens",
@@ -827,9 +844,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.hallucinogens.frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.hallucinogens.frequencyLast30Days
+                  // }
+                  defaultValue={"3"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "hallucinogens",
@@ -877,7 +895,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.inhalants.ageOfFirstUse}
+                  // value={formData.alcoholDrugAbused.inhalants.ageOfFirstUse}
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "inhalants",
@@ -890,7 +909,8 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={formData.alcoholDrugAbused.inhalants.yearsOfUse}
+                  // value={formData.alcoholDrugAbused.inhalants.yearsOfUse}
+                  defaultValue={"2004"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "inhalants",
@@ -947,9 +967,10 @@ function Page1() {
                 {" "}
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.inhalants.frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.inhalants.frequencyLast30Days
+                  // }
+                  defaultValue={"7"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "inhalants",
@@ -994,10 +1015,11 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.substanceNotClassified
-                      .ageOfFirstUse
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.substanceNotClassified
+                  //     .ageOfFirstUse
+                  // }
+                  defaultValue={"2002"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "substanceNotClassified",
@@ -1010,9 +1032,10 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.substanceNotClassified.yearsOfUse
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.substanceNotClassified.yearsOfUse
+                  // }
+                  defaultValue={"2004"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "substanceNotClassified",
@@ -1073,10 +1096,11 @@ function Page1() {
               <td id="td1">
                 <input
                   type="text"
-                  value={
-                    formData.alcoholDrugAbused.substanceNotClassified
-                      .frequencyLast30Days
-                  }
+                  // value={
+                  //   formData.alcoholDrugAbused.substanceNotClassified
+                  //     .frequencyLast30Days
+                  // }
+                  defaultValue={"6"}
                   onChange={(e) =>
                     handleDrugDetailsInputChange(
                       "substanceNotClassified",
@@ -1119,7 +1143,7 @@ function Page1() {
               </td>
             </tr>
           </tbody>
-        </table>
+        </table><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div
           className="mh_endbtn"
           style={{

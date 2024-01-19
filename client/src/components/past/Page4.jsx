@@ -110,7 +110,10 @@ const Form4 = () => {
     navigate("/past/page3");
     window.scrollTo({ top: 0, behavior: "instant" });
   };
-
+  const handlePreview=()=>{
+    navigate("/preview/pages");
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
   return (
     <form onSubmit={handleSubmit}>
       <div
@@ -218,6 +221,7 @@ const Form4 = () => {
             >
               Submit
             </button>
+            <button onClick={handlePreview}>Preview</button>
           </div>
         </div>
       </div>

@@ -82,7 +82,7 @@ const AdjustmentPatterns = () => {
         sexualProblem,
         // Include other form fields accordingly
       };
-
+      
       // Make a POST request to the server
       const response = await fetch('http://localhost:5000/family/page5', {
         method: 'POST',
@@ -91,7 +91,11 @@ const AdjustmentPatterns = () => {
         },
         body: JSON.stringify(formData),
       });
-
+      if(response.ok)
+      {
+        navigate("/medical/page1")
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      }
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
@@ -100,7 +104,7 @@ const AdjustmentPatterns = () => {
 
       // You can perform additional actions after the form submission if necessary
 
-      alert('Form submitted successfully!');
+      // alert('Form submitted successfully!');
     } catch (error) {
       console.error('Error:', error);
       // Handle errors as needed
@@ -169,13 +173,13 @@ const AdjustmentPatterns = () => {
             </tbody>
           </table>
         </div>
-        <br />
+        <br /><br/><br/>
         <div className="fh_family_damage">
           <h2 className='fh_h2'>21. Family Damage as Seen by the Counselors</h2>
           <div class="fh_radio-group"> 
             <input  className='fh_input' type="radio" name="familyDamage" value="mild" />     Mild 
-            <input  className='fh_input' type="radio" name="familyDamage" value="moderate" />  Moderate
-            <input  className='fh_input' type="radio" name="familyDamage" value="severe" />  Severe
+            <input  className='fh_input' type="radio" name="familyDamage"    defaultChecked={true}   value="moderate" />  Moderate
+            <input  className='fh_input' type="radio" name="familyDamage"    value="severe" />  Severe
           </div>
         </div>
       </div>
@@ -191,11 +195,11 @@ const AdjustmentPatterns = () => {
         <h2 className='fh_h2'> 22. Record Extra-Marital Experiences</h2>
         <form id="extraMaritalForm">
           <label style={{ display: 'inline' }}>
-            <input  className='fh_input' type="radio" name="extraMarital" value="present" onChange={() => handleRadioChange('present')}
+            <input  className='fh_input'  type="radio" name="extraMarital" value="present" onChange={() => handleRadioChange('present')}
             /> Present
           </label>
           <label style={{ display: 'inline', marginLeft: '10px' }}>
-            <input  className='fh_input' type="radio" name="extraMarital" value="absent" onChange={() => handleRadioChange('absent')} /> Absent
+            <input  className='fh_input'   defaultChecked={true}   type="radio" name="extraMarital" value="absent" onChange={() => handleRadioChange('absent')} /> Absent
           </label>  
         </form>
         {detailsVisible && (
@@ -251,6 +255,7 @@ const AdjustmentPatterns = () => {
             type="radio"
             name="highRiskActivity"
             value="absent"
+            defaultChecked={true}  
             onChange={() => handleRadioChange1('absent')}
           />
           Absent
@@ -301,6 +306,7 @@ const AdjustmentPatterns = () => {
             type="radio"
             name="HIV"
             value="absent"
+            defaultChecked={true}  
             onChange={() => handleRadioChange2('absent')}
           />
           Absent
@@ -342,6 +348,7 @@ const AdjustmentPatterns = () => {
             type="radio"
             name="sexual-problem"
             value="absent"
+            defaultChecked={true}  
             onChange={() => handleRadioChange4('absent')}
           />
           Absent
@@ -385,7 +392,7 @@ const AdjustmentPatterns = () => {
             </tbody>
           </table>
         </div>
-      )}
+      )}<br/><br/><br/><br/>
        <div className="fh_endbtn">
         <button className="fh_prev-btn" onClick={goToPrevPage}>
         &laquo;  Prev 

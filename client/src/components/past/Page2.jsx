@@ -196,7 +196,7 @@ const Form2 = () => {
               Submit
             </button>
           </div> */}
-          <div class="page-number">16</div>
+           <div class="page-number">16</div>
           <button
             className="past2button"
             type="button"
@@ -207,6 +207,16 @@ const Form2 = () => {
           </button>
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </form>
   );
 };

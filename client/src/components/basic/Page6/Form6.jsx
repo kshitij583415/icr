@@ -92,9 +92,12 @@ const DisulfiramLetter = () => {
   return (
     <div className="bi_id6">
       <div style={{ fontStyle: "oblique", fontWeight: "bold" }}>
+        <br/>
+        <br/>
         <h2>
           <u>ಡೈಸಲ್ಟಿರಮ್ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುವ ಬಗ್ಗೆ ಪತ್ರ</u>
         </h2>
+        <br/><br/><br/><br/><br/>
         <p>
           ನನ್ನ ಮದ್ಯಪಾನ ರೋಗದ ಚಿಕಿತ್ಸೆಯ ಭಾಗವಾಗಿ ವೈದ್ಯರು ನಿರ್ದೇಶಿಸಿದ ಡೈಸಲಿರಮ್ ಎಂಬ
           ಮಾತ್ರೆಯನ್ನು ತೆಗೆದುಕೊಳ್ಳುತ್ತೇನೆ. ಈ ಮಾತ್ರೆ ತೆಗೆದುಕೊಳ್ಳುವಾಗ ಮದ್ಯಪಾನ
@@ -108,6 +111,7 @@ const DisulfiramLetter = () => {
         <p className="bi_k">
           ಇದರಿಂದ ಉಂಟಾಗುವ ಪರಿಣಾಮಗಳಿಗೆ ನಾನೇ ಜವಾಬ್ದಾರನಾಗಿರುತ್ತೇನೆ.
         </p>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <u>
           <input
             type="file"
@@ -119,15 +123,15 @@ const DisulfiramLetter = () => {
         </u>
         <div className="bi_sign">ಚಿಕಿತ್ಸಾರ್ಥಿಯ ಸಹಿ</div>
       </div>
-
+      <br/><br/><br/>
       <hr
         style={{ border: "none", borderBottom: "5px solid black", margin: "0" }}
       />
-
+<br/><br/><br/>
       <h2>
         <u>Letter for taking Disulfiram Tablets</u>
       </h2>
-
+      <br/><br/><br/><br/>
       <p>
         As a part of De-Addiction treatment Doctor has advised me to take
         Disulfiram tablets
@@ -136,7 +140,7 @@ const DisulfiramLetter = () => {
         During Disulfiram course if I consume Alcohol it may result in Medical
         or Psychological risk & consequences.
       </p>
-
+      <br/><br/><br/><br/>
       <p>I am aware of it and I will take entire responsibility by myself.</p>
 
       <u>
@@ -148,7 +152,7 @@ const DisulfiramLetter = () => {
           className="norm"
         />
       </u>
-      <div className="bi_sign1">Signature of the Patient</div>
+      <div className="bi_sign1">Signature of the Patient</div><br/><br/><br/>
       <center>
         <div className="footer">
           <div className="bi_endbtn">
