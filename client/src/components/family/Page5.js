@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AdjustmentPatterns = () => {
   const [extraMarital, setExtraMarital] = useState('');
@@ -16,37 +18,18 @@ const AdjustmentPatterns = () => {
     setShowDetailBlock4(value === 'present');
   };
 
-  const showDetails = () => {
-    // Implement your logic here if needed
+  const notifySuccess = () => {
+    toast.success('Form submitted successfully!', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   };
 
-  const hideDetails = () => {
-    // Implement your logic here if needed
-  };
-
-  const showDetails2 = () => {
-    // Implement your logic here if needed
-  };
-
-  const hideDetails2 = () => {
-    // Implement your logic here if needed
-  };
-
-  const showDetails3 = () => {
-    // Implement your logic here if needed
-  };
-
-  const hideDetails3 = () => {
-    // Implement your logic here if needed
-  };
-
-  const showDetails4 = () => {
-    // Implement your logic here if needed
-  };
-
-  const hideDetails4 = () => {
-    // Implement your logic here if needed
-  };
 
   const handleRadioChange = (value) => {
     setExtraMarital(value);
@@ -93,6 +76,7 @@ const AdjustmentPatterns = () => {
       });
       if(response.ok)
       {
+        notifySuccess();
         navigate("/medical/page1")
         window.scrollTo({ top: 0, behavior: 'instant' });
       }

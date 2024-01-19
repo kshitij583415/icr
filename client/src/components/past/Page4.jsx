@@ -161,7 +161,7 @@ const Form4 = () => {
                   type="date"
                   className="past4text1"
                   name="date2"
-                  value={formData.date2}
+                  value={formData.date2||"2024-01-15"}
                   onChange={handleInputChange}
                   style={past4inputStyle}
                 />
@@ -172,7 +172,7 @@ const Form4 = () => {
                   rows="35"
                   cols="35"
                   name="complaints2"
-                  value={formData.complaints2}
+                  value={formData.complaints2||"Complaints"}
                   onChange={handleInputChange}
                   style={past4textareaStyle}
                 ></textarea>
@@ -183,7 +183,7 @@ const Form4 = () => {
                   rows="35"
                   cols="35"
                   name="medication2"
-                  value={formData.medication2}
+                  value={formData.medication2||"Medication"}
                   onChange={handleInputChange}
                   style={past4textareaStyle}
                 ></textarea>

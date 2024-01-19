@@ -61,33 +61,33 @@ const Form2 = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
   };
 
-  /*const handleNext = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost:5000/past/form2", // Update the endpoint
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+  // const handleNext = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       "http://localhost:5000/past/form2", // Update the endpoint
+  //       {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json",
+  //         },
+  //         body: JSON.stringify(formData),
+  //       }
+  //     );
 
-      if (response.ok) {
-        console.log("Form data submitted successfully");
-        localStorage.setItem("formData", JSON.stringify(formData));
-        navigate("/past/page3");
-        window.scrollTo({ top: 0, behavior: "instant" });
-      } else {
-        console.error("Error submitting form:", response.statusText);
-        // Handle error appropriately (e.g., show error message to the user)
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      // Handle error appropriately (e.g., show error message to the user)
-    }
-  };*/
+  //     if (response.ok) {
+  //       console.log("Form data submitted successfully");
+  //       localStorage.setItem("formData", JSON.stringify(formData));
+  //       navigate("/past/page3");
+  //       window.scrollTo({ top: 0, behavior: "instant" });
+  //     } else {
+  //       console.error("Error submitting form:", response.statusText);
+  //       // Handle error appropriately (e.g., show error message to the user)
+  //     }
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     // Handle error appropriately (e.g., show error message to the user)
+  //   }
+  // };
 
   const handlePrev = () => {
     localStorage.setItem("formData", JSON.stringify(formData));
@@ -138,7 +138,7 @@ const Form2 = () => {
                   type="date"
                   className="past2text1"
                   name="date"
-                  value={formData.date}
+                  value={formData.date||'2023-01-15'}
                   onChange={handleInputChange}
                   style={past2inputStyle}
                 />
@@ -149,7 +149,7 @@ const Form2 = () => {
                   rows="35"
                   cols="35"
                   name="complaints"
-                  value={formData.complaints}
+                  value={formData.complaints||"Complain"}
                   onChange={handleInputChange}
                   style={past2textareaStyle}
                   margin-inline-start="auto"
@@ -161,9 +161,10 @@ const Form2 = () => {
                   rows="35"
                   cols="35"
                   name="medication"
-                  value={formData.medication}
+                  value={formData.medication||"There are many reasons"}
                   onChange={handleInputChange}
                   style={past2textareaStyle}
+                  
                 ></textarea>
               </td>
               <td className="past2-td">
@@ -172,6 +173,7 @@ const Form2 = () => {
                   id="signature"
                   accept=".jpg, .jpeg, .png, .pdf"
                   style={past2inputStyle}
+                  onChange={handleInputChange}
                 />
               </td>
             </tr>
@@ -185,6 +187,7 @@ const Form2 = () => {
             type="button"
             onClick={handlePrev}
             style={past2buttonStyle}
+            onChange={handleInputChange}
           >
             &laquo; Prev
           </button>

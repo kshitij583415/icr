@@ -126,7 +126,7 @@ const Form3 = () => {
             name="name"
             placeholder="Enter your name"
             style={{ marginRight: "100px" }}
-            value={formData.name}
+            value={formData.name||"Prateek"}
             onChange={handleInputChange}
           />
 
@@ -139,7 +139,7 @@ const Form3 = () => {
             name="age"
             placeholder="Enter your age"
             style={{ marginRight: "100px" }}
-            value={formData.age}
+            value={formData.age||23}
             onChange={handleInputChange}
           />
 
@@ -151,7 +151,7 @@ const Form3 = () => {
             id="date"
             name="dateOfAdmission"
             style={{ marginRight: "100px" }}
-            value={formData.dateOfAdmission}
+            value={formData.dateOfAdmission||"2024-01-15"}
             onChange={handleInputChange}
           />
 
@@ -167,7 +167,7 @@ const Form3 = () => {
               id="historyOfAlcoholismOrSubstanceAbuse"
               name="historyOfAlcoholismOrSubstanceAbuse"
               type="text"
-              value={formData.historyOfAlcoholismOrSubstanceAbuse}
+              value={formData.historyOfAlcoholismOrSubstanceAbuse||"Consuming alcohol from 5 years"}
               onChange={handleInputChange}
             />
             <br />

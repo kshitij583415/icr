@@ -4,7 +4,7 @@ const app = express();
 
 import bodyParser from 'body-parser';
 import User from './model/Login.js'
-
+import jwt from 'jsonwebtoken';
 
 app.use(bodyParser.json()); 
 app.use(cors());
@@ -43,61 +43,127 @@ app.use("/medical",medicalroute);
 // app.use("/signup",signup);
 
 
-app.post('/signup', async (req, res) => {
-    const { name, email, password } = req.body;
-    console.log("name",name)
-  
-    try {
-      // Check if the email is already registered
-      const existingUser = await User.findOne({ email });
-  
-      if (existingUser) {
-        return res.status(400).json({ error: 'Email is already registered' });
-      }
-  
-      // Hash the password
-    //   const hashedPassword = await bcrypt.hash(password, 10);
-  
-      // Create a new user
-      const newUser = new User({ name, email, password });
-      await newUser.save();
-  
-      // Send a success response
-      res.status(201).json({ message: 'User registered successfully' });
-    } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
-    }
-  });
-  
 
-  app.post('/login', async (req, res) => {
-    const { email, password } = req.body;
+app.post("/signup", async (req, res, next) => {
+  console.log(req.body)
+  const {
+      name,
+      email,
+      password
+  } = req.body;
+  console.log(req.body);
+  if (!name || !email || !password) {
+      return res.status(422).json({
+          message: "Please fill all the details"
+      })
+  }
+  try {
+      const userExist = await User.findOne({
+          email
+      });
+      if (userExist) {
+          return res.status(422).json({
+              message: "Email already registered"
+          });
+      } else {
+          const user = new User({
+              name,
+              email,
+              password
+          });
+
+          bcrypt.hash(password, 10, (err, hashedPassword) => {
+              user.set('password', hashedPassword);
+              user.save();
+              next();
+          })
+          res.status(201).json({
+              message: "Registered Successfully"
+          });
+          console.log("Registered");
+      }
+  } catch (err) {
+      console.log("Error")
+      console.log(err);
+  }
+})
+
+app.post("/login", async (req, res, next) => {
+    const {
+        email,
+        password
+    } = req.body;
+    if (!email || !password) {
+        return res.status(422).json({
+            message: "Please fill all the details"
+        })
+    }
+    try {
+        const userLogin = await User.findOne({
+            email
+        });
+        if (!userLogin) {
+            return res.status(400).json({
+                message: "Invalid Credentials"
+            });
+        } else {
+            const validateUser = await bcrypt.compare(password, userLogin.password);
+            console.log(validateUser);  
+            if (!validateUser) {
+                res.status(400).send('Invalid Credentials');
+            } else {
+                const payload = {
+                    userId: userLogin._id,
+                    email: userLogin.email
+                }
+                const JWT_SECRET_KEY ="ircteamsmern"
+                jwt.sign(payload, JWT_SECRET_KEY, {
+                    expiresIn: 9000
+                }, async (err, token) => {
+                    // await userLogin.updateOne({ _id: userLogin._id }, { $set: { token } });
+                    userLogin.token = token;
+                    await userLogin.save();
+                    console.log(userLogin)
+                    next();
+                })
+                return res.status(201).json(userLogin);
+            }
+            return res.status(201).json({
+                message: "Login  unsuccesfull"
+            });
+        }
+    } catch (err) {
+        console.log(err);
+    }
+})
+
+
+  app.get('/api/getAllFormData', async (req, res) => {
+    const { name } = req.query;
   
     try {
-      // Find the user by email
-      const user = await User.findOne({ email });
+      // Fetch basic form data to get the "name" field
+      const basicFormData = await FormBasicData.findOne({ name });
   
-      if (!user) {
-        return res.status(401).json({ error: 'Invalid email or password' });
+      if (!basicFormData) {
+        return res.status(404).json({ message: 'Basic form data not found' });
       }
   
-      // Compare passwords
-      const isPasswordValid = password === user.password;
+      // Use the "name" field to fetch data from other forms
+      const familyFormData = await FormFamilyData.findOne({ name: basicFormData.name });
+      const medicalFormData = await FormMedicalData.findOne({ name: basicFormData.name });
   
-      if (!isPasswordValid) {
-        return res.status(401).json({ error: 'Invalid email or password' });
+      if (!familyFormData || !medicalFormData) {
+        return res.status(404).json({ message: 'Form data not found' });
       }
   
-      // Generate JWT token
-      // const token = jwt.sign({ userId: user._id }, 'your_secret_key', { expiresIn: '1h' });
-  
-      // Send the token in the response
-      res.status(200).json({ message: 'Successfully login' });
-  
+      return res.status(200).json({
+        basicFormData,
+        familyFormData,
+        medicalFormData,
+      });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Internal Server Error' });
+      return res.status(500).json({ error: 'An error occurred while fetching form data' });
     }
   });
 

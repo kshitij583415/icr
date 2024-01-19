@@ -8,7 +8,7 @@
     font-family: "Arial", sans-serif;
     width: 100vw;
     height: 100vh;
-    opacity: 1;
+    opacity: 0.75;
     color: white; /* Set text color to white for better contrast */
   }
   .hm_casesheet {
